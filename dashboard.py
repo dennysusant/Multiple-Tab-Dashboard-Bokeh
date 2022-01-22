@@ -23,7 +23,7 @@ for item in crypto:
 
 
 
-def get_data(crypto):
+def get_data(stocks):
     finnhub_client = finnhub.Client(api_key="c7j7g52ad3if6uehd9ng")
     data=finnhub_client.quote(stocks)
     data=data['c']
