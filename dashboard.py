@@ -20,6 +20,13 @@ crypto=finnhub_client.crypto_symbols('BINANCE')
 for item in crypto:
     listcrypto.append((item['symbol'],item['symbol']))
 
+# Get Nasdaq Stock List
+nasdaq=pd.read_csv('nasdaq.csv')
+nasdaq=nasdaq['Symbol']
+nasdaqlist=[]
+for item in nasdaq:
+    nasdaqlist.append((item,item))
+
 # Get Data
 def get_data(stocks):
         finnhub_client = finnhub.Client(api_key="c7j7g52ad3if6uehd9ng")
@@ -81,12 +88,7 @@ def crypto(x,y):
 
 
 
-# Get Nasdaq Stock List
-nasdaq=pd.read_csv('nasdaq.csv')
-nasdaq=nasdaq['Symbol']
-nasdaqlist=[]
-for item in nasdaq:
-    nasdaqlist.append((item,item))
+
 
 
 #Crypto Tab
